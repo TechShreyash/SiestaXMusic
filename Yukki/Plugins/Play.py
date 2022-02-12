@@ -1,3 +1,4 @@
+from Yukki.Plugins.Spotify import spotify_play
 import asyncio
 from os import path
 
@@ -9,6 +10,8 @@ from youtube_search import YoutubeSearch
 import Yukki
 from Yukki import (BOT_USERNAME, DURATION_LIMIT, DURATION_LIMIT_MIN,
                    MUSIC_BOT_NAME, app, db_mem)
+from Yukki.Core.PyTgCalls.Converter import convert
+from Yukki.Core.PyTgCalls.Downloader import download
 from Yukki.Core.PyTgCalls.Tgdownloader import telegram_download
 from Yukki.Database import (get_active_video_chats, get_video_limit,
                             is_active_video_chat)
@@ -26,7 +29,8 @@ from Yukki.Utilities.thumbnails import gen_thumb
 from Yukki.Utilities.url import get_url
 from Yukki.Utilities.videostream import start_stream_video
 from Yukki.Utilities.youtube import (get_yt_info_id, get_yt_info_query,
-                                     get_yt_info_query_slider, get_audio)
+                                     get_yt_info_query_slider)
+from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 
 loop = asyncio.get_event_loop()
 
@@ -81,10 +85,24 @@ async def play(_, message: Message):
             return await mystic.edit_text(
                 f"**Duration Limit Exceeded**\n\n**Allowed Duration: **{DURATION_LIMIT_MIN} minute(s)\n**Received Duration:** {duration_min} minute(s)"
             )
-        
-        
+        file_name = (
+            audio.file_unique_id
+            + "."
+            + (
+                (audio.file_name.split(".")[-1])
+                if (not isinstance(audio, Voice))
+                else "ogg"
+            )
+        )
+        file_name = path.join(path.realpath("downloads"), file_name)
+        file = await convert(
+            (await message.reply_to_message.download(file_name))
+            if (not path.isfile(file_name))
+            else file_name,
+        )
         return await start_stream_audio(
             message,
+            file,
             "smex1",
             "Given Audio Via Telegram",
             duration_min,
@@ -126,6 +144,13 @@ async def play(_, message: Message):
             mystic,
         )
     elif url:
+        if "spotify.com" in url:
+            return await message.reply_photo(
+                photo="Utils/spotify.png",
+                caption=(
+                    "**Usage:**\n /spotify [Spotify Track Or Playlist Or Album Or Artist Link]\n\n➤ **Playing limit is 20 songs for playlists and albums** [[What is this ?](https://t.me/TechZBots/71)]"
+                ),
+                reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton(text="🔄 Close", callback_data="close_btn"),]]))             
         mystic = await message.reply_text("🔄 Processing URL... Please Wait!")
         if not message.reply_to_message:
             query = message.text.split(None, 1)[1]
@@ -215,6 +240,13 @@ async def Music_Stream(_, CallbackQuery):
             f"**Duration Limit Exceeded**\n\n**Allowed Duration: **{DURATION_LIMIT_MIN} minute(s)\n**Received Duration:** {duration_min} minute(s)"
         )
     await CallbackQuery.answer(f"Processing:- {title[:20]}", show_alert=True)
+    mystic = await CallbackQuery.message.reply_text(
+        f"**{MUSIC_BOT_NAME} Downloader**\n\n**Title:** {title[:50]}\n\n0% ▓▓▓▓▓▓▓▓▓▓▓▓ 100%"
+    )
+    downloaded_file = await loop.run_in_executor(
+        None, download, videoid, mystic, title
+    )
+    raw_path = await convert(downloaded_file)
     theme = await check_theme(chat_id)
     chat_title = await specialfont_to_normal(chat_title)
     thumb = await gen_thumb(thumbnail, title, user_id, theme, chat_title)
@@ -222,11 +254,13 @@ async def Music_Stream(_, CallbackQuery):
         db_mem[chat_id] = {}
     await start_stream(
         CallbackQuery,
+        raw_path,
         videoid,
         thumb,
         title,
         duration_min,
         duration_sec,
+        mystic,
     )
 
 

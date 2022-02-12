@@ -21,7 +21,7 @@ HEROKU_API_KEY = getenv("HEROKU_API_KEY")
 HEROKU_APP_NAME = getenv("HEROKU_APP_NAME")
 
 UPSTREAM_REPO = "https://github.com/TechShreyash/SiestaXMusic"
-UPSTREAM_BRANCH = "dev"
+UPSTREAM_BRANCH = "main"
 
 SUPPORT_CHANNEL = "https://t.me/TechZBots"
 SUPPORT_GROUP = "https://t.me/TechZBots_Support"
@@ -59,3 +59,8 @@ if str(getenv("LOG_SESSION")).strip() == "":
     LOG_SESSION = str(None)
 else:
     LOG_SESSION = str(getenv("LOG_SESSION"))
+
+if str(getenv("LIMIT")).strip().upper() == "FALSE":
+    PL_LIMIT = "FALSE"
+else:
+    PL_LIMIT = "TRUE"
