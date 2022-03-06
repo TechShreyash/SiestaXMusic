@@ -103,17 +103,19 @@ async def play_youtube_playlistcb(_, CallbackQuery):
             j = 0
             for_t = 0
             for_p = 0
-            if "ytpl" in cbdata:
-                query_id = cbdata.replace("ytpl","").strip()
-                query_id = "http://www.youtube.com/playlist?list=" + query_id
-                spotify_info = await get_yt_playlist(query_id,user_id)
-                tracks_list = spotify_info[4]
-            elif "ytpls" in cbdata:
+            
+            if "ytpls" in cbdata:
                 query_id = cbdata.replace("ytpls","").strip()
                 query_id = "http://www.youtube.com/playlist?list=" + query_id
                 spotify_info = await get_yt_playlist(query_id,user_id)
                 tracks_list = spotify_info[4]
                 random.shuffle(tracks_list)
+            elif "ytpl" in cbdata:
+                query_id = cbdata.replace("ytpl","").strip()
+                query_id = "http://www.youtube.com/playlist?list=" + query_id
+                spotify_info = await get_yt_playlist(query_id,user_id)
+                tracks_list = spotify_info[4]
+            
             
             if "errrorrr" in spotify_info:
                 await mystic.delete()
