@@ -1,3 +1,4 @@
+from Yukki.Utilities.yt_playlist import play_yt_playlist
 import requests
 from Yukki.Utilities.spotify import get_spotify_url, getsp_album_info, getsp_artist_info, getsp_playlist_info, getsp_track_info
 from Yukki.Plugins.custom.func import mplay_stream
@@ -155,6 +156,9 @@ async def play(_, message: Message):
         if "resso.com" in url:            
             return await message.reply_text("Use /resso for resso links")
         
+        if "youtube.com/playlist" in url:            
+            return await play_yt_playlist(message)
+            
         mystic = await message.reply_text("🔄 Processing URL... Please Wait!")
         if not message.reply_to_message:
             query = message.text.split(None, 1)[1]
