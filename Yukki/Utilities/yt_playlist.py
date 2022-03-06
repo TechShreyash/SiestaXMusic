@@ -1,4 +1,3 @@
-from outcome import capture
 from Yukki import BOT_USERNAME
 from youtubesearchpython import Playlist, ResultMode
 import json
