@@ -50,7 +50,7 @@ async def get_yt_playlist(url,user):
         return "errrorrr"
     
 async def play_yt_playlist(message):
-    playlist_url = message.text.replace("/play","").replace(f"/play@{BOT_USERNAME}").strip()
+    playlist_url = message.text.replace("/play","").replace(f"/play@{BOT_USERNAME}","").strip()
     data = await get_yt_playlist(playlist_url,message.from_user.id)
     pl_id = data[3].replace("http://www.youtube.com/playlist?list=","").strip()
     text = f"🔮 **Playlist Name:** `{data[0]}`\n🧿 **Playlist By:** `{data[1]}`\n🎰 **Number of Videos:** `{data[2]}`"
