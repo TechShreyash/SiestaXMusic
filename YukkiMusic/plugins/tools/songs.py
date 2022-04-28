@@ -35,7 +35,6 @@ SONG_COMMAND = get_command("SONG_COMMAND")
 @language
 async def song_commad_private(client, message: Message, _):
     try:
-        await message.delete()
         url = await YouTube.url(message)
         if url:
             if not await YouTube.exists(url):
