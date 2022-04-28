@@ -1,21 +1,3 @@
-Skip to content
-TeamYukki
-/
-YukkiMusicBot
-Public
-Code
-Issues
-Pull requests
-Actions
-Projects
-Wiki
-Security
-Insights
-YukkiMusicBot/YukkiMusic/plugins/tools/speedtest.py
-@Hunter-XD
-Hunter-XD okay
- 2 contributors
-
 import asyncio
 import os
 
