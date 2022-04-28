@@ -1,11 +1,20 @@
-#
-# Copyright (C) 2021-2022 by TeamYukki@Github, < https://github.com/TeamYukki >.
-#
-# This file is part of < https://github.com/TeamYukki/YukkiMusicBot > project,
-# and is released under the "GNU v3.0 License Agreement".
-# Please see < https://github.com/TeamYukki/YukkiMusicBot/blob/master/LICENSE >
-#
-# All rights reserved.
+Skip to content
+TeamYukki
+/
+YukkiMusicBot
+Public
+Code
+Issues
+Pull requests
+Actions
+Projects
+Wiki
+Security
+Insights
+YukkiMusicBot/YukkiMusic/plugins/tools/speedtest.py
+@Hunter-XD
+Hunter-XD okay
+ 2 contributors
 
 import asyncio
 import os
