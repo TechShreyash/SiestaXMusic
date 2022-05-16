@@ -4,9 +4,6 @@ import aiohttp
 from config import MUSIC_BOT_NAME, YOUTUBE_IMG_URL
 
 async def gen_thumb(videoid):
-    if os.path.isfile(f"cache/{videoid}.png"):
-        return f"cache/{videoid}.png"
-
     url = f"https:/https://techzbotsapi.herokuapp.com/thumb?videoid={videoid}&botname={MUSIC_BOT_NAME}"
     
     try:
