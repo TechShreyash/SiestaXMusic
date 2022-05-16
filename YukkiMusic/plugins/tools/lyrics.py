@@ -38,7 +38,8 @@ async def lrsearch(client, message: Message, _):
     async with aiohttp.ClientSession() as session:
         async with session.get(f"https://techzbotsapi.herokuapp.com/lyrics?query={title}") as resp:
             if resp.status == 200:
-                lyrics = await resp.json()["lyrics"]
+                lyrics = await resp.json()
+                lyrics = lyrics["lyrics"]
 
     if lyrics is None:
         return await m.edit(_["lyrics_3"].format(title))
