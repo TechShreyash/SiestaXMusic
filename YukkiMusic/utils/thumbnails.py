@@ -14,10 +14,10 @@ async def gen_thumb(videoid):
         async with aiohttp.ClientSession() as session:
             async with session.get(url) as resp:
                 if resp.status == 200:
-                    f = await aiofiles.open( f"cache/techz{videoid}.png", mode="wb" ) 
+                    f = await aiofiles.open(f"cache/techz{videoid}.png", mode="wb" ) 
                     await f.write(await resp.read()) 
                     await f.close()
 
-        return image_url        
+        return f"cache/techz{videoid}.png"
     except Exception:
         return YOUTUBE_IMG_URL
