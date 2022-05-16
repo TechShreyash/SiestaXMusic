@@ -64,14 +64,8 @@ async def varsFunc(client, message):
         start = "No"
     else:
         start = f"[Image]({config.START_IMG_URL})"
-    if not config.SUPPORT_CHANNEL:
-        s_c = "No"
-    else:
-        s_c = f"[Channel]({config.SUPPORT_CHANNEL})"
-    if not config.SUPPORT_GROUP:
-        s_g = "No"
-    else:
-        s_g = f"[Group]({config.SUPPORT_GROUP})"
+    s_c = f"[Channel](https://t.me/TechZBots)"
+    s_g = f"[Group](https://t.me/TechZBots_Support)"
     if not config.GIT_TOKEN:
         token = "No"
     else:

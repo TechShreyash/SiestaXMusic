@@ -33,14 +33,14 @@ DURATION_LIMIT_MIN = int(
 
 # Duration Limit for downloading Songs in MP3 or MP4 format from bot
 SONG_DOWNLOAD_DURATION = int(
-    getenv("SONG_DOWNLOAD_DURATION_LIMIT", "120")
+    getenv("SONG_DOWNLOAD_DURATION_LIMIT", "180")
 )  # Remember to give value in Minutes
 
 # You'll need a Private Group ID for this.
 LOG_GROUP_ID = int(getenv("LOG_GROUP_ID", ""))
 
 # A name for your Music bot.
-MUSIC_BOT_NAME = getenv("MUSIC_BOT_NAME")
+MUSIC_BOT_NAME = getenv("MUSIC_BOT_NAME","SiestaXMusic")
 
 # Your User ID.
 OWNER_ID = list(
@@ -54,18 +54,11 @@ HEROKU_API_KEY = getenv("HEROKU_API_KEY")
 HEROKU_APP_NAME = getenv("HEROKU_APP_NAME")
 
 # For customized or modified Repository
-UPSTREAM_REPO = getenv(
-    "UPSTREAM_REPO",
-    "https://github.com/TechShreyash/SiestaXMusic",
-)
-UPSTREAM_BRANCH = getenv("UPSTREAM_BRANCH", "main")
+UPSTREAM_REPO = "https://github.com/TechShreyash/SiestaXMusic"
+UPSTREAM_BRANCH = "main"
 
 # GIT TOKEN ( if your edited repo is private)
 GIT_TOKEN = getenv("GIT_TOKEN", None)
-
-# Only  Links formats are  accepted for this Var value.
-SUPPORT_CHANNEL = "https://t.me/TechZBots"
-SUPPORT_GROUP = "https://t.me/TechZBots_Support"
 
 # Set it in True if you want to leave your assistant after a certain amount of time. [Set time via AUTO_LEAVE_ASSISTANT_TIME]
 AUTO_LEAVING_ASSISTANT = getenv("AUTO_LEAVING_ASSISTANT", "False").capitalize()
@@ -106,10 +99,10 @@ SPOTIFY_CLIENT_SECRET = getenv("SPOTIFY_CLIENT_SECRET", "8130539ee3cf4b30bc24d2f
 VIDEO_STREAM_LIMIT = int(getenv("VIDEO_STREAM_LIMIT", "3"))
 
 # Maximum Limit Allowed for users to save playlists on bot's server
-SERVER_PLAYLIST_LIMIT = int(getenv("SERVER_PLAYLIST_LIMIT", "50"))
+SERVER_PLAYLIST_LIMIT = int(getenv("SERVER_PLAYLIST_LIMIT", "100"))
 
 # MaximuM limit for fetching playlist's track from youtube, spotify, apple links.
-PLAYLIST_FETCH_LIMIT = int(getenv("PLAYLIST_FETCH_LIMIT", "25"))
+PLAYLIST_FETCH_LIMIT = int(getenv("PLAYLIST_FETCH_LIMIT", "50"))
 
 # Cleanmode time after which bot will delete its old messages from chats
 CLEANMODE_DELETE_MINS = int(
@@ -236,35 +229,6 @@ DURATION_LIMIT = int(time_to_seconds(f"{DURATION_LIMIT_MIN}:00"))
 SONG_DOWNLOAD_DURATION_LIMIT = int(
     time_to_seconds(f"{SONG_DOWNLOAD_DURATION}:00")
 )
-
-if SUPPORT_CHANNEL:
-    if not re.match("(?:http|https)://", SUPPORT_CHANNEL):
-        print(
-            "[ERROR] - Your SUPPORT_CHANNEL url is wrong. Please ensure that it starts with https://"
-        )
-        sys.exit()
-
-if SUPPORT_GROUP:
-    if not re.match("(?:http|https)://", SUPPORT_GROUP):
-        print(
-            "[ERROR] - Your SUPPORT_GROUP url is wrong. Please ensure that it starts with https://"
-        )
-        sys.exit()
-
-if UPSTREAM_REPO:
-    if not re.match("(?:http|https)://", UPSTREAM_REPO):
-        print(
-            "[ERROR] - Your UPSTREAM_REPO url is wrong. Please ensure that it starts with https://"
-        )
-        sys.exit()
-
-if GITHUB_REPO:
-    if not re.match("(?:http|https)://", GITHUB_REPO):
-        print(
-            "[ERROR] - Your GITHUB_REPO url is wrong. Please ensure that it starts with https://"
-        )
-        sys.exit()
-
 
 if PING_IMG_URL:
     if PING_IMG_URL != "assets/Ping.jpeg":

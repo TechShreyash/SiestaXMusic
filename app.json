@@ -23,6 +23,11 @@
         "value": "",
         "required": true
       },      
+      "AUTO_LEAVING_ASSISTANT": {
+        "description": "True If you want your assistant to leave all chats automatically after some time.",
+        "value": "False",
+        "required": false
+      },
       "BOT_TOKEN": {
         "description": "A Bot's token from Botfather",
         "value": "",
@@ -87,4 +92,4 @@
           }
       },
       "stack": "container"
-  }
+}

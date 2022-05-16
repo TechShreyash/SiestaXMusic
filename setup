@@ -1,3 +1,6 @@
+#!/bin/bash
+### Yukki Music Bot Installer
+
 pprint (){
 	cred='\033[0;31m'
 	cgreen='\033[0;32m'

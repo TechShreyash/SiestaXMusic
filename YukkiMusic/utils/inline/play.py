@@ -7,7 +7,102 @@
 #
 # All rights reserved.
 
+import random
+
 from pyrogram.types import InlineKeyboardButton
+
+selections = [
+    "▁▄▂▇▄▅▄▅▃",
+    "▁▃▇▂▅▇▄▅▃",
+    "▃▁▇▂▅▃▄▃▅",
+    "▃▄▂▄▇▅▃▅▁",
+    "▁▃▄▂▇▃▄▅▃",
+    "▃▁▄▂▅▃▇▃▅",
+    "▁▇▄▂▅▄▅▃▄",
+    "▁▃▅▇▂▅▄▃▇",
+    "▃▅▂▅▇▁▄▃▁",
+    "▇▅▂▅▃▄▃▁▃",
+    "▃▇▂▅▁▅▄▃▁",
+    "▅▄▇▂▅▂▄▇▁",
+    "▃▅▂▅▃▇▄▅▃",
+]
+
+def time_to_sec(time: str):
+    x = time.split(":")
+
+    if len(x) == 2:
+        min = int(x[0])
+        sec = int(x[1])
+
+        total_sec = (min*60) + sec
+    elif len(x) == 3:
+        hour = int(x[0])
+        min = int(x[1])
+        sec = int(x[2])
+
+        total_sec = (hour*60*60) + (min*60) + sec
+
+    return total_sec
+
+def stream_markup_timer(_, videoid, chat_id, played, dur):
+    played_sec = time_to_sec(played)
+    total_sec = time_to_sec(dur)
+
+    x, y = str(round(played_sec/total_sec,1)).split(".")
+    pos = int(y)
+
+    line = "—"
+    circle = "◉"
+
+    bar = line*(pos-1)
+    bar += circle
+    bar += line*(10-len(bar))
+
+    bar = random.choice(selections)
+    buttons = [
+        [
+            InlineKeyboardButton(
+                text=f"{played} {bar} {dur}",
+                callback_data="GetTimer",
+            )
+        ],
+        [
+            InlineKeyboardButton(
+                text=_["PL_B_2"],
+                callback_data=f"add_playlist {videoid}",
+            ),
+            InlineKeyboardButton(
+                text=_["PL_B_3"], switch_inline_query_current_chat=""
+            ),
+        ],
+        [
+            InlineKeyboardButton(
+                text=_["CLOSEMENU_BUTTON"], callback_data="close"
+            )
+        ],
+    ]
+    return buttons
+
+
+def telegram_markup_timer(_, chat_id, played, dur):
+    bar = random.choice(selections)
+    buttons = [
+        [
+            InlineKeyboardButton(
+                text=f"{played} {bar} {dur}",
+                callback_data="GetTimer",
+            )
+        ],
+        [
+            InlineKeyboardButton(
+                text=_["PL_B_3"], switch_inline_query_current_chat=""
+            ),
+            InlineKeyboardButton(
+                text=_["CLOSEMENU_BUTTON"], callback_data="close"
+            ),
+        ],
+    ]
+    return buttons
 
 
 def track_markup(_, videoid, user_id, channel, fplay):
