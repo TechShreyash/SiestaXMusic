@@ -40,6 +40,8 @@ async def lrsearch(client, message: Message, _):
             if resp.status == 200:
                 lyrics = await resp.json()
                 lyrics = lyrics["lyrics"]
+            else:
+                lyrics = None
 
     if lyrics is None:
         return await m.edit(_["lyrics_3"].format(title))
