@@ -4,7 +4,7 @@ import aiohttp
 from config import MUSIC_BOT_NAME, YOUTUBE_IMG_URL
 
 async def gen_thumb(videoid):
-    url = f"https:/https://techzbotsapi.herokuapp.com/thumb?videoid={videoid}&botname={MUSIC_BOT_NAME}"
+    url = f"https://techzbotsapi.herokuapp.com/thumb?videoid={videoid}&botname={MUSIC_BOT_NAME}"
     
     try:
         async with aiohttp.ClientSession() as session:
