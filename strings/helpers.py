@@ -7,7 +7,7 @@
 #
 # All rights reserved.
 
-HELP_1 = """✅**<u>Admin Commands:</u>**
+HELP_1 = """✅**اوامر ابن سميرة :</u>**
 
 **c** stands for channel play.
 
