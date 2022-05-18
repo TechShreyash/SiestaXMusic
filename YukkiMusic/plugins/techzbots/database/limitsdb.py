@@ -4,7 +4,7 @@ from YukkiMusic.misc import SUDO_USERS
 
 limitsdb = mongodb.limits
 
-SUDOS = OWNER_ID + SUDO_USERS
+SUDOS = SUDO_USERS
 
 async def is_approved(user_id: int) -> bool:
     if user_id in SUDOS:
