@@ -69,19 +69,27 @@ async def userunapprove(client, message: Message, _):
             user = user.replace("@", "")
         user = await app.get_users(user)
         if await is_approved(user.id):
-            return await message.reply_text("{} is not approved")
+            return await message.reply_text("{} is not approved".format(
+                message.from_user.mention
+            ))
         removed = await remove_approved_user(user.id)
         if removed:
-            await message.reply_text("Removed **{0}** to From Approved Users")
+            await message.reply_text("Removed **{0}** to From Approved Users".format(
+                message.from_user.mention
+            ))
             return
         await message.reply_text(f"Something wrong happened.")
         return
     user_id = message.reply_to_message.from_user.id
     if await is_approved(user_id):
-        return await message.reply_text("{} is not approved")
+        return await message.reply_text("{} is not approved".format(
+                message.reply_to_message.from_user.mention
+            ))
     removed = await remove_approved_user(user_id)
     if removed:
-        await message.reply_text("Removed **{0}** to From Approved Users")
+        await message.reply_text("Removed **{0}** to From Approved Users".format(
+                message.reply_to_message.from_user.mention
+            ))
         return
     await message.reply_text(f"Something wrong happened.")
 
