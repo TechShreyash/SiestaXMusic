@@ -7,6 +7,7 @@
 #
 # All rights reserved.
 
+from YukkiMusic.plugins.techzbots.database.limitsdb import is_approved
 import os
 import re
 
@@ -49,12 +50,14 @@ async def song_commad_private(client, message: Message, _):
             ) = await YouTube.details(url)
             if str(duration_min) == "None":
                 return await mystic.edit_text(_["song_3"])
-            if int(duration_sec) > SONG_DOWNLOAD_DURATION_LIMIT:
-                return await mystic.edit_text(
-                    _["play_4"].format(
-                        SONG_DOWNLOAD_DURATION, duration_min
+            
+            if not await is_approved(message.from_user.id):
+                if int(duration_sec) > SONG_DOWNLOAD_DURATION_LIMIT:
+                    return await mystic.edit_text(
+                        _["play_4"].format(
+                            SONG_DOWNLOAD_DURATION, duration_min
+                        )
                     )
-                )
             buttons = song_markup(_, vidid)
             await mystic.delete()
             return await message.reply_photo(
@@ -79,10 +82,12 @@ async def song_commad_private(client, message: Message, _):
             return await mystic.edit_text(_["play_3"])
         if str(duration_min) == "None":
             return await mystic.edit_text(_["song_3"])
-        if int(duration_sec) > SONG_DOWNLOAD_DURATION_LIMIT:
-            return await mystic.edit_text(
-                _["play_6"].format(SONG_DOWNLOAD_DURATION, duration_min)
-            )
+
+        if not await is_approved(message.from_user.id):
+            if int(duration_sec) > SONG_DOWNLOAD_DURATION_LIMIT:
+                return await mystic.edit_text(
+                    _["play_6"].format(SONG_DOWNLOAD_DURATION, duration_min)
+                )
         buttons = song_markup(_, vidid)
         await mystic.delete()
         return await message.reply_photo(

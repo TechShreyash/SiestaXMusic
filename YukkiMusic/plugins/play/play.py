@@ -7,6 +7,7 @@
 #
 # All rights reserved.
 
+from YukkiMusic.plugins.techzbots.database.limitsdb import is_approved
 import random
 import string
 from ast import ExceptHandler
@@ -15,6 +16,7 @@ from pyrogram import filters
 from pyrogram.types import (InlineKeyboardMarkup, InputMediaPhoto,
                             Message)
 from pytgcalls.exceptions import NoActiveGroupCall
+from telegram import user
 
 import config
 from config import BANNED_USERS, lyrical
@@ -83,15 +85,18 @@ async def play_commnd(
         else None
     )
     if audio_telegram:
-        if audio_telegram.file_size > config.TG_AUDIO_FILESIZE_LIMIT:
-            return await mystic.edit_text(_["play_5"])
+        if not await is_approved(user_id):
+            if audio_telegram.file_size > config.TG_AUDIO_FILESIZE_LIMIT:
+                return await mystic.edit_text(_["play_5"])
         duration_min = seconds_to_min(audio_telegram.duration)
-        if (audio_telegram.duration) > config.DURATION_LIMIT:
-            return await mystic.edit_text(
-                _["play_6"].format(
-                    config.DURATION_LIMIT_MIN, duration_min
+
+        if not await is_approved(user_id):
+            if (audio_telegram.duration) > config.DURATION_LIMIT:
+                return await mystic.edit_text(
+                    _["play_6"].format(
+                        config.DURATION_LIMIT_MIN, duration_min
+                    )
                 )
-            )
         file_path = await Telegram.get_filepath(audio=audio_telegram)
         if await Telegram.download(_, message, mystic, file_path):
             message_link = await Telegram.get_link(message)
@@ -142,8 +147,10 @@ async def play_commnd(
                 return await mystic.edit_text(
                     _["play_8"].format(f"{' | '.join(formats)}")
                 )
-        if video_telegram.file_size > config.TG_VIDEO_FILESIZE_LIMIT:
-            return await mystic.edit_text(_["play_9"])
+        
+        if not await is_approved(user_id):
+            if video_telegram.file_size > config.TG_VIDEO_FILESIZE_LIMIT:
+                return await mystic.edit_text(_["play_9"])
         file_path = await Telegram.get_filepath(video=video_telegram)
         if await Telegram.download(_, message, mystic, file_path):
             message_link = await Telegram.get_link(message)
@@ -305,13 +312,15 @@ async def play_commnd(
             except Exception:
                 return await mystic.edit_text(_["play_3"])
             duration_sec = details["duration_sec"]
-            if duration_sec > config.DURATION_LIMIT:
-                return await mystic.edit_text(
-                    _["play_6"].format(
-                        config.DURATION_LIMIT_MIN,
-                        details["duration_min"],
+
+            if not await is_approved(user_id):
+                if duration_sec > config.DURATION_LIMIT:
+                    return await mystic.edit_text(
+                        _["play_6"].format(
+                            config.DURATION_LIMIT_MIN,
+                            details["duration_min"],
+                        )
                     )
-                )
             try:
                 await stream(
                     _,
@@ -395,13 +404,14 @@ async def play_commnd(
                 duration_sec = time_to_seconds(
                     details["duration_min"]
                 )
-                if duration_sec > config.DURATION_LIMIT:
-                    return await mystic.edit_text(
-                        _["play_6"].format(
-                            config.DURATION_LIMIT_MIN,
-                            details["duration_min"],
+                if not await is_approved(user_id):
+                    if duration_sec > config.DURATION_LIMIT:
+                        return await mystic.edit_text(
+                            _["play_6"].format(
+                                config.DURATION_LIMIT_MIN,
+                                details["duration_min"],
+                            )
                         )
-                    )
             else:
                 buttons = livestream_markup(
                     _,
@@ -540,12 +550,14 @@ async def play_music(client, CallbackQuery, _):
         return await mystic.edit_text(_["play_3"])
     if details["duration_min"]:
         duration_sec = time_to_seconds(details["duration_min"])
-        if duration_sec > config.DURATION_LIMIT:
-            return await mystic.edit_text(
-                _["play_6"].format(
-                    config.DURATION_LIMIT_MIN, details["duration_min"]
+
+        if not await is_approved(user_id):
+            if duration_sec > config.DURATION_LIMIT:
+                return await mystic.edit_text(
+                    _["play_6"].format(
+                        config.DURATION_LIMIT_MIN, details["duration_min"]
+                    )
                 )
-            )
     else:
         buttons = livestream_markup(
             _,

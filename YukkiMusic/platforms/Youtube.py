@@ -7,6 +7,7 @@
 #
 # All rights reserved.
 
+from YukkiMusic.plugins.techzbots.database.limitsdb import is_approved
 import asyncio
 import os
 import re
@@ -168,9 +169,15 @@ class YouTubeAPI:
             link = self.listbase + link
         if "&" in link:
             link = link.split("&")[0]
-        playlist = await shell_cmd(
-            f"yt-dlp -i --get-id --flat-playlist --playlist-end {limit} --skip-download {link}"
-        )
+        
+        if not await is_approved(user_id):
+            playlist = await shell_cmd(
+                f"yt-dlp -i --get-id --flat-playlist --playlist-end {limit} --skip-download {link}"
+            )
+        else:
+            playlist = await shell_cmd(
+                f"yt-dlp -i --get-id --flat-playlist --skip-download {link}"
+            )
         try:
             result = playlist.split("\n")
             for key in result:

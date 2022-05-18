@@ -470,3 +470,5 @@ sug_24 : "You can check my owner and sudo users who manage me.\n\nCommand: /sudo
 sug_25 : "Bot has a feature called **Commands Delete Mode**. It deletes its executed commands automatically.\n\nEnable or disable deletemode from /settings [__Enabled by default__]"
 sug_26 : "You can change language of the bot to available languages for easy understanding.\n\nCommand: /language"
 sug_27 : "Bot has a feature called **Force Play**.\n\n**Force Play** stops the playing track on voice chat and starts playing the searched track instantly without disturbing/clearing queue.\n\nCommand: /playforce"
+sug_28 : "You know you play directly from spotify's top playlist using /browse command. \n\nChoose category and then the playlist you want to play"
+sug_29 : "You know you can get approved from any sudo user of the bot and remove all your limits from bot :)\n\nCheck sudo list using /sudolist"
