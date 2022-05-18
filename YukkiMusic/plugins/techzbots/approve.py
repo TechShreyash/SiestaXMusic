@@ -4,7 +4,7 @@ from pyrogram.types import Message
 
 from config import BANNED_USERS, MONGO_DB_URI, OWNER_ID
 from YukkiMusic import app
-from YukkiMusic.misc import SUDOERS
+from YukkiMusic.misc import SUDO_USERS as SUDOERS
 from YukkiMusic.plugins.techzbots.database.limitsdb import add_to_approved_user, remove_approved_user, get_approved_users, is_approved
 from YukkiMusic.utils.decorators.language import language
 
