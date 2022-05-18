@@ -91,6 +91,7 @@ async def userunapprove(client, message: Message, _):
 async def approved_list(client, message: Message, _):
     count = 0
     smex = 0
+    text = ""
     for user_id in await get_approved_users():
         if 1 == 1:
             try:
