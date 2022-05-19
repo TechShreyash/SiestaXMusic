@@ -18,7 +18,7 @@ async def is_approved(user_id: int) -> bool:
 async def get_approved_users() -> list:
     users_list = []
     async for user in limitsdb.find({"user_id": {"$gt": 0}}):
-        users_list.append(user)
+        users_list.append(user["user_id"])
     return users_list + SUDOS
 
 
