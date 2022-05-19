@@ -16,7 +16,6 @@ from pyrogram import filters
 from pyrogram.types import (InlineKeyboardMarkup, InputMediaPhoto,
                             Message)
 from pytgcalls.exceptions import NoActiveGroupCall
-from telegram import user
 
 import config
 from config import BANNED_USERS, lyrical
