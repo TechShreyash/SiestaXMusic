@@ -99,7 +99,7 @@ COMMANDS_BUTTON_SUDO = InlineKeyboardMarkup(
                 text="اوامر التشغيل", callback_data="play_cmd"
             ),
             InlineKeyboardButton(
-                text="اوامر المطورين", url="https://telegra.ph/SiestaXMusic-Commands-03-13"
+                text="اوامر المطورين", url="https://telegra.ph/𝐌𝐔𝐒𝐓𝐀𝐅𝐀-06-07-5"
             ),            
         ],
         [
@@ -133,7 +133,7 @@ BACK_BUTTON = InlineKeyboardMarkup(
 SUDO_BACK_BUTTON = InlineKeyboardMarkup(
     [   [
             InlineKeyboardButton(
-                text="اوامر المطورين", url="https://telegra.ph/SiestaXMusic-Commands-03-13"
+                text="اوامر المطورين", url="https://telegra.ph/𝐌𝐔𝐒𝐓𝐀𝐅𝐀-06-07-5"
             ),                        
         ],
         [
