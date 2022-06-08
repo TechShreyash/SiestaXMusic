@@ -36,7 +36,7 @@ auth_7 : "**Authorised Users List[AUL]:**\n\n"
 auth_8 : "┗ Added By:-"
 
 # PLUGINS - Admins
-admin_1 : "Music is already Paused."
+admin_1 : "Music is already وكفت."
 admin_2 : "🎧 Voicechat Paused by {}!"
 admin_3 : "Music is already resumed."
 admin_4 : "🎧 Voicechat Resumed by {}!"
