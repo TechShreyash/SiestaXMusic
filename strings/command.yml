@@ -38,26 +38,26 @@ LYRICS_COMMAND : ["lyrics"]
 
 
 # Admin Commands
-AUTH_COMMAND : ["auth"]
-UNAUTH_COMMAND : ["unauth"]
-AUTHUSERS_COMMAND : ["authusers"]
+AUTH_COMMAND : ["auth", "مشرف"]
+UNAUTH_COMMAND : ["unauth", "ازالة"]
+AUTHUSERS_COMMAND : ["authusers", "المعتمدين"]
 PAUSE_COMMAND : ["توقف", "cpause", "pause"]
 RESUME_COMMAND : ["resume", "cresume", "استئناف"]
-MUTE_COMMAND : ["mute", "cmute", "ميوت"]
+MUTE_COMMAND : ["mute", "cmute", "كتم"]
 UNMUTE_COMMAND : ["unmute", "cunmute"]
 STOP_COMMAND : ["stop", "ايقاف", "cstop", "cend"]
 SKIP_COMMAND : ["skip", "cskip", "تخطي"]
 SHUFFLE_COMMAND : ["shuffle", "cshuffle"]
 LOOP_COMMAND : ["loop", "cloop"]
-SEEK_COMMAND : ["seek", "cseek", "seekback", "cseekback", "تقدم"]
+SEEK_COMMAND : ["seek", "cseek", "seekback", "cseekback", "تقدم", "تقديم"]
 RESTART_COMMAND : ["restart"]
 
 # Sudo Users Commaands
 
 # Sudo Command
-ADDSUDO_COMMAND : ["addsudo"]
+ADDSUDO_COMMAND : ["addsudo", "مطور"]
 DELSUDO_COMMAND : ["delsudo"]
-SUDOUSERS_COMMAND : ["sudolist"]
+SUDOUSERS_COMMAND : ["sudolist", "المطورين"]
 
 #Broadcast 
 BROADCAST_COMMAND : ["broadcast"]
@@ -85,7 +85,7 @@ VARS_COMMAND : ["vars", "config"]
 
 
 #Basic Bot Commands
-UPDATE_COMMAND : ["update"]
+UPDATE_COMMAND : ["update", "تحديث"]
 REBOOT_COMMAND : ["reboot"]
 AUTOEND_COMMAND : ["autoend"]
 
@@ -95,7 +95,7 @@ UNAUTHORIZE_COMMAND : ["unauthorize"]
 AUTHORIZED_COMMAND : ["authorized"]
 
 #Block Users Command
-BLOCK_COMMAND : ["block"]
+BLOCK_COMMAND : ["block", "حظر"]
 UNBLOCK_COMMAND : ["unblock"]
 BLOCKED_COMMAND : ["blockedusers"]
 
