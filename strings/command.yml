@@ -32,8 +32,8 @@ DELETEPLAYLIST_COMMAND : ["deleteplaylist"]
 
 
 # Tools
-QUEUE_COMMAND : ["الطابور","queue", "player", "cplayer", "playing", "cplaying"]
-SONG_COMMAND : ["song", "video"]
+QUEUE_COMMAND : ["الطابور","queue", "القائمة", "cplayer", "playing", "cplaying"]
+SONG_COMMAND : ["تحميل"]
 LYRICS_COMMAND : ["lyrics"]
 
 
