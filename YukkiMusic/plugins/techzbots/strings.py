@@ -4,35 +4,32 @@ from config import MUSIC_BOT_NAME as BOT_NAME
 
 BOT_USERNAME = app.username
 START_TEXT = f"""
-✨ **Hello MENTION !**
-
-**You can use [{BOT_NAME}](https://t.me/{BOT_USERNAME}) to play Music or Videos in your Group Video Chat.**
-
-💡 **Find out all the Bot's commands and how they work by clicking on the ➤ 📚 Commands button**
+✨ **ها يحلوو هياتني  🌚♥️ !**
+**يمكنك استخدام [{BOT_NAME}](https://t.me/{BOT_USERNAME}) لتشغيل الاغاني والفيديوهات في مجموعتك.**
+💡 **اكتشف جميع اوامر البوت وفهمها من خلال الضغط على زر  ➤ 📚 الاوامر **
 """
 
 COMMANDS_TEXT = f"""
-✨ **Hello MENTION !**
-
-**Click on the buttons below to know my commands.**
+✨ **هلا حبب 🌚💞 !**
+**اضفط على الزر ادناه لمعرفة اوامري .**
 """
 
 START_BUTTON_GROUP = InlineKeyboardMarkup(
     [   
         [
             InlineKeyboardButton(
-                text="📚 Commands", callback_data="command_menu"
+                text="📚 الاوامر", callback_data="command_menu"
             ),
             InlineKeyboardButton(
-                text="🔧 Settings", callback_data="settings_helper"
+                text="🔧 الاعدادات", callback_data="settings_helper"
             ),                                   
         ],
         [
             InlineKeyboardButton(
-                text="📣 Updates Channel", url="https://t.me/TechZBots"
+                text="📣 قناة التحديثات", url="https://t.me/trztb"
             ),
             InlineKeyboardButton(
-                text="💬 Support Group", url="https://t.me/TechZBots_Support"
+                text="💬 اصنع بوتك الخاص", url="https://t.me/ov_tr"
             ),                       
         ],        
     ]
@@ -41,20 +38,20 @@ START_BUTTON_GROUP = InlineKeyboardMarkup(
 START_BUTTON_PRIVATE = InlineKeyboardMarkup(
     [   [
             InlineKeyboardButton(
-                text="➕ Add me to Group ➕", url=f"https://t.me/{BOT_USERNAME}?startgroup=true"
+                text="➕ اضفني لمجموعة ➕", url=f"https://t.me/{BOT_USERNAME}?startgroup=true"
             ),            
         ],
         [   
             InlineKeyboardButton(
-                text="📚 Commands", callback_data="command_menu"
+                text="📚 الاوامر", callback_data="command_menu"
             ),                       
         ],
         [
             InlineKeyboardButton(
-                text="📣 Updates Channel", url="https://t.me/TechZBots"
+                text="📣 قناة التحديثات", url="https://t.me/trztb"
             ),
             InlineKeyboardButton(
-                text="💬 Support Group", url="https://t.me/TechZBots_Support"
+                text="💬 مطور السورس", url="https://t.me/ov_tr"
             ),                       
         ],        
     ]
@@ -63,26 +60,26 @@ START_BUTTON_PRIVATE = InlineKeyboardMarkup(
 COMMANDS_BUTTON_USER = InlineKeyboardMarkup(
     [   [
             InlineKeyboardButton(
-                text="Admin Commands", callback_data="admin_cmd"
+                text="اوامر الادمن", callback_data="admin_cmd"
             ),
             InlineKeyboardButton(
-                text="Bot Commands", callback_data="bot_cmd"
+                text="اوامر البوت", callback_data="bot_cmd"
             ),            
         ],
         [
             InlineKeyboardButton(
-                text="Play Commands", callback_data="play_cmd"
+                text="اوامر التشغيل", callback_data="play_cmd"
             ),            
             InlineKeyboardButton(
-                text="Extra Commands", url="https://telegra.ph/SiestaXMusic-Commands-03-13-2"
+                text="اوامر اضافية", url="https://telegra.ph/SiestaXMusic-Commands-03-13-2"
             ),                                   
         ],
         [
             InlineKeyboardButton(
-                text="↪️ Back", callback_data="command_menu"
+                text="↪️ عودة", callback_data="command_menu"
             ),
             InlineKeyboardButton(
-                text="🔄 Close", callback_data="close_btn"
+                text="🔄 اغلاق", callback_data="close_btn"
             ),            
         ],                
     ]
@@ -91,31 +88,31 @@ COMMANDS_BUTTON_USER = InlineKeyboardMarkup(
 COMMANDS_BUTTON_SUDO = InlineKeyboardMarkup(
     [   [
             InlineKeyboardButton(
-                text="Admin Commands", callback_data="admin_cmd"
+                text="اوامر الادمن", callback_data="admin_cmd"
             ),
             InlineKeyboardButton(
-                text="Bot Commands", callback_data="bot_cmd"
+                text="اوامر البوت", callback_data="bot_cmd"
             ),            
         ],
         [
             InlineKeyboardButton(
-                text="Play Commands", callback_data="play_cmd"
+                text="اوامر التشغيل", callback_data="play_cmd"
             ),
             InlineKeyboardButton(
-                text="Sudo Commands", url="https://telegra.ph/SiestaXMusic-Commands-03-13"
+                text="اوامر المطورين", url="https://telegra.ph/SiestaXMusic-Commands-03-13"
             ),            
         ],
         [
             InlineKeyboardButton(
-                text="Extra Commands", url="https://telegra.ph/SiestaXMusic-Commands-03-13-2"
+                text="اوامر اضافية", url="https://telegra.ph/SiestaXMusic-Commands-03-13-2"
             ),                                   
         ],
         [
             InlineKeyboardButton(
-                text="↪️ Back", callback_data="command_menu"
+                text="↪️ عودة", callback_data="command_menu"
             ),
             InlineKeyboardButton(
-                text="🔄 Close", callback_data="close_btn"
+                text="🔄 اغلاق", callback_data="close_btn"
             ),            
         ],                
     ]
@@ -124,10 +121,10 @@ COMMANDS_BUTTON_SUDO = InlineKeyboardMarkup(
 BACK_BUTTON = InlineKeyboardMarkup(
     [   [
             InlineKeyboardButton(
-                text="↪️ Back", callback_data="advanced_cmd"
+                text="↪️ عودة", callback_data="advanced_cmd"
             ),
             InlineKeyboardButton(
-                text="🔄 Close", callback_data="close_btn"
+                text="🔄 اغلاق", callback_data="close_btn"
             ),            
         ],                        
     ]
@@ -136,15 +133,15 @@ BACK_BUTTON = InlineKeyboardMarkup(
 SUDO_BACK_BUTTON = InlineKeyboardMarkup(
     [   [
             InlineKeyboardButton(
-                text="Sudo Commands", url="https://telegra.ph/SiestaXMusic-Commands-03-13"
+                text="اوامر المطورين", url="https://telegra.ph/SiestaXMusic-Commands-03-13"
             ),                        
         ],
         [
             InlineKeyboardButton(
-                text="↪️ Back", callback_data="advanced_cmd"
+                text="↪️ عودة", callback_data="advanced_cmd"
             ),
             InlineKeyboardButton(
-                text="🔄 Close", callback_data="close_btn"
+                text="🔄 اغلاق", callback_data="close_btn"
             ),            
         ],                        
     ]
@@ -152,113 +149,86 @@ SUDO_BACK_BUTTON = InlineKeyboardMarkup(
 
 
 ADMIN_TEXT = f"""
-✅--**Admin Commands:**--
-
-c stands for channel play.
-
-/pause or /cpause - Pause the playing music.
-/resume or /cresume- Resume the paused music.
-/mute or /cmute- Mute the playing music.
-/unmute or /cunmute- Unmute the muted music.
-/skip or /cskip- Skip the current playing music.
-/stop or /cstop- Stop the playing music.
-/shuffle or /cshuffle- Randomly shuffles the queued playlist.
-
-✅--**Specific Skip:**--
-/skip or /cskip [Number(example: 3)] 
-    - Skips music to a the specified queued number. Example: /skip 3 will skip music to third queued music and will ignore 1 and 2 music in queue.
-
-✅--**Loop Play:**--
-/loop or /cloop [enable/disable] or [Numbers between 1-10] 
-    - When activated, bot loops the current playing music to 1-10 times on voice chat. Default to 10 times.
-
+✅--**اوامر الادمنية:**--
+c ضع الحرف قبل الامر لتنفيذه في المجموعة.
+/pause أو /cpause - توقف الموسيقى المُشغلة.
+/seek [ عدد ثواني ] - للتقدم في الاغنية حسب الوقت المعطى
+/seekback [ عدد الثواني ] - للعودة في الاغنية حسب الوقت المعطى 
+/resume or /cresume- استئناف الموسيقى المشغلة.
+/mute or /cmute- كتم صوت الموسيقى.
+/unmute or /cunmute- الغاء الكتم عن البوت.
+/skip or /cskip- التخطي للاغنية التالية في قائمة التشغيل.
+/stop or /cstop- ايقاف كل الاغاني.
+/shuffle or /cshuffle- ترتيب عشوائي للاغاني في قائمة التشغيل.
+✅--**التخطي المحدد:**--
+/skip or /cskip [رقم (مثلا : 3)] 
+    - يتخطى الموسيقى إلى الرقم المحدد في قائمة الانتظار.  مثال: سيتخطى / skip 3 الموسيقى إلى الموسيقى في قائمة الانتظار الثالثة ويتجاهل الموسيقى 1 و 2 في قائمة الانتظار
+✅--**وضع الحلقة:**--
+/loop or /cloop [enable/disable] or [رقم بين  1-10] 
+    - عند التنشيط ، يقوم البوت بتكرار تشغيل الموسيقى الحالية إلى 1-10 مرات في الدردشة الصوتية.  افتراضي إلى 10 مرات.
 """
 AUTH_TEXT = """
-✅--**Auth Users:**--
-Auth Users can use admin commands without admin rights in your chat.
-
-/auth [Username] - Add a user to AUTH LIST of the group.
-/unauth [Username] - Remove a user from AUTH LIST of the group.
-/authusers - Check AUTH LIST of the group.
+✅--**اوامر المعتمدين:**--
+المستخدمين المعتمدون سيستطيعون استخدام جميع اوامر المشرفين بدون رفعهم مشرف في المجموعة 
+/auth [اليوزر] - اضف شخص لقائمة المعتمدين.
+/unauth [اليوزر] - لحذف شخص من القائمة.
+/authusers - جلب قائمة المعتمدين.
 """
 
 AUTH_BACK_BUTTON = InlineKeyboardMarkup(
     [   [
             InlineKeyboardButton(
-                text="↪️ Back", callback_data="admin_cmd"
+                text="↪️ عودة", callback_data="admin_cmd"
             ),
             InlineKeyboardButton(
-                text="🔄 Close", callback_data="close_btn"
+                text="🔄 اغلاق", callback_data="close_btn"
             ),            
         ],                        
     ]
 )
 
 BOT_TEXT = """
-✅--**Bot Commands:**--
-
-/stats - Get Top 10 Tracks Global Stats, Top 10 Users of bot, Top 10 Chats on bot, Top 10 Played in a chat etc etc.
-
-/sudolist - Check Sudo Users of Yukki Music Bot
-
-/lyrics [Music Name] - Searches Lyrics for the particular Music on web.
-
-/song [Track Name] or [YT Link] - Download any track from youtube in mp3 or mp4 formats.
-
-c stands for channel play.
-/queue or /cqueue- Check Queue List of Music.
+✅--**اوامر البوت:**--
+/stats - الحصول على توب 10 محادثات و توب 10 اغاني وتوب 10 اغاني الخ...
+/sudolist - فحص قائمه المطورين 
+/lyrics [اسم الاغنية] - لجلب كلمات الاغاني من الويب.
+/song [اسم الاغنية] or [الرابط] - لتحميل اغنية من اليوتيوب.
+c ضع الحرف قبل الامر لتنفيذه في القناة
+/queue or /cqueue- تفقد قائمة الانتظار.
 """
 
 PLAY_TEXT = """
-✅--**Play Commands:**--
-
-Available Commands = play , vplay , cplay
-
-ForcePlay Commands = playforce , vplayforce , cplayforce
-
-c stands for channel play.
-v stands for video play.
-force stands for force play.
-
-/play or /vplay or /cplay  - Bot will start playing your given query on voice chat or Stream live links on voice chats.
-
-/playforce or /vplayforce or /cplayforce -  Force Play stops the current playing track on voice chat and starts playing the searched track instantly without disturbing/clearing queue.
-
-/channelplay [Chat username or id] or [Disable] - Connect channel to a group and stream music on channel's voice chat from your group.
-
-
-✅--**Bot's Server Playlists:**--
-/playlist  - Check Your Saved Playlist On Servers.
-/deleteplaylist - Delete any saved music in your playlist
-/play  - Start playing Your Saved Playlist from Servers.
+✅--**اوامر التشغيل:**--
+الاوامر المتوفرة = play , vplay , cplay
+c ضع الحرف قبل الامر لتنفيذه في القناة.
+v ضع الحرف قبل الامر لتنفيذ في الفيديو.
+/play or /vplay or /cplay  - سيبدأ البوت بتشغيل الصوت او الفيديو في مجموعتك أو قناتك.
+/channelplay [يوزر القناة ] or [Disable] - اربط القناة مجموعتك او ارفع البوت مشرف على قناتك وقم بتشغيل الاغاني على القناة من خلال مجموعتك .
+✅--**قائمة تشغيلك في السيرفر:**--
+/playlist  - لتفقد الاغاني المضافه في قائمة التشغيل .
+/deleteplaylist - لحذف قائمة التشغيل المضافه
+/play  - بدأ تشغيل قائمة تشغيلك المضافه.
 """
 
 
 BASIC_TEXT = """
-💠 **Basic Commands:**
-
-/start - Start the bot
-
-/help - Get help message
-
-/play - Play songs or videos in vc
-
-/vplay - Play video in VC
-
-/settings - Check Settings of bot in your group
-
-**Some Useful Commands :** 
-
+💠 **اوامر اساسية:**
+/start - تشغيل البوت
+/help - الحصول على مساعدة
+/play - بدأ تشغيل اغنية او فيديو 
+/vplay - بدأ تشغيل فيديو 
+/settings - تفقد الاعدادات في مجموعتك 
+**بعض الاوامر المفيدة  :** 
 /pause /resume /skip /end /loop /shuffle
 """
 
 BASIC_BACK_BUTTON = InlineKeyboardMarkup(
     [   [
             InlineKeyboardButton(
-                text="↪️ Back", callback_data="command_menu"
+                text="↪️ عودة", callback_data="command_menu"
             ),
             InlineKeyboardButton(
-                text="🔄 Close", callback_data="close_btn"
+                text="🔄 اغلاق", callback_data="close_btn"
             ),            
         ],                        
     ]
@@ -267,15 +237,15 @@ BASIC_BACK_BUTTON = InlineKeyboardMarkup(
 ADMIN_BACK_BUTTON = InlineKeyboardMarkup(
     [   [
             InlineKeyboardButton(
-                text="Auth Commands", callback_data="auth_cmds"
+                text="اوامر المعتمدين", callback_data="auth_cmds"
             ),                        
         ],
         [
             InlineKeyboardButton(
-                text="↪️ Back", callback_data="command_menu"
+                text="↪️ عودة", callback_data="command_menu"
             ),
             InlineKeyboardButton(
-                text="🔄 Close", callback_data="close_btn"
+                text="🔄 اغلاق", callback_data="close_btn"
             ),            
         ],                        
     ]
@@ -284,20 +254,20 @@ ADMIN_BACK_BUTTON = InlineKeyboardMarkup(
 COMMAND_MENU_BUTTON = InlineKeyboardMarkup(
     [   [
             InlineKeyboardButton(
-                text="🔍 Basic Commands", callback_data="basic_cmd"
+                text="🔍 الاوامر الاساسية", callback_data="basic_cmd"
             ),                                   
         ],
         [
             InlineKeyboardButton(
-                text="📚 Advanced Commands", callback_data="advanced_cmd"
+                text="📚 اوامر اضافية", callback_data="advanced_cmd"
             ),
         ],
         [
             InlineKeyboardButton(
-                text="↪️ Back", callback_data="open_start_menu"
+                text="↪️ عودة", callback_data="open_start_menu"
             ),
             InlineKeyboardButton(
-                text="🔄 Close", callback_data="close_btn"
+                text="🔄 اغلاق", callback_data="close_btn"
             ),            
         ],                        
     ]
