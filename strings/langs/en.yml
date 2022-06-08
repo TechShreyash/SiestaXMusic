@@ -134,62 +134,63 @@ playcb_1 : "امشي لكك هاي مو الك! ابحث عن اغنيتك ال�
 playcb_2 : "جلب المسار التالي"
 
 # Channel Play
-cplay_1 : "You can play music in channels from this chat[{0}] to any channel or your chat's linked channel.\n\n**For linked channel:**\n`/{1} linked`\n\n**For any other channel:**\n`/{1} [Channel ID]`"
-cplay_2 : "This chat has no linked channel."
-cplay_3 : "Channel Defined to {0}\n\n__Channel ID__: {1}"
-cplay_4 : "Failed to get channel.\n\nMake sure you have added bot in your channel and promoted it as admin.\nEdit or Change channel via /channelplay"
-cplay_5 : "Only Channels are supported."
-cplay_6 : "You need to be the **Owner** of the channel[{0}] to connect it with this group.\n**Channel's Owner:** @{1}\n\nAlternatively you can link your group to that channel and then try connnecting with `/channelplay linked`"
+cplay_1 : "يمكنك تشغيل الموسيقى في قناتك من خلال هذه المحادثة [{0}] لأي قناة . \n\n**لربط قناتك :**\n`/{1} [ايدي القناة]`"
+cplay_2 : "هذه المحادثة غير مربوطة بأي قناة."
+cplay_3 : "القناة غيرت إلى {0}\n\n__معرف القناة__: {1}"
+cplay_4 : "فشل في الوصول للقناة.\n\nتاكد من اضافه البوت للقناة ورفعه مشرف بها .\nثم ارسل  /channelplay"
+cplay_5 : "يتم دعم القنوات فقط."
+cplay_6 : "يجب ان تكون أنت  **المالك** للقناة [{0}] لربط هذا الكروب .\n**مالك القناة:** @{1}\n\nبدلاً من ذلك ، يمكنك ربط مجموعتك بتلك القناة ثم محاولة الاتصال بها `/channelplay مرتبط`"
 
 #Play
-play_1 : "🔄 Processing Query... Please Wait!"
-play_2 : "**🏷Channel Play Mode**\n\n🔄 Processing Query... Please Wait!\n**Linked Channel:** {0}"
-play_3 : "Failed to Process Query!"
-play_4 : "🖇 **Admins Only Play**\nOnly Admins and Auth Users can play music in this group.\n\nChange mode via /playmode and if you're already admin, reload admincache via /admincache"
-play_5 : "Failed to process audio file.\n\nAudio File Size Should Be Less Than 100 mb"
-play_6 : "**Duration Limit Exceeded**\n\n**Allowed Duration: **{0} minute(s)\n**Received Duration:** {1} hour(s)"
-play_7 : "Sorry! Bot only allows limited number of video calls due to CPU overload issues. Many other chats are using video call right now. Try switching to audio or try again later"
-play_8 : "Not A Valid Video File Extension!\n\n**Supported Formats:** {0}"
-play_9 : "Video File Size Should Be Less Than 1 GiB"
-play_10 : "**Youtube Playlist Feature**\n\nSelect the Mode in which you want to play whole Youtube Playlist"
-play_11 : "📎Title: **{0}\n\n⏳Duration:** {1} Mins"
-play_12 : "**Spotify Play Mode**\n\nRequested By:- {0}"
-play_13 : "**Apple Playlists**\n\nRequested By:- {0}"
-play_14 : "**Unable to verify the URL.**\nBot wonders if this url belongs to any of the following platforms: Youtube, AppleMusic, Spotify, Resso and Soundcloud.\n\nYou can use /stream for M3u8 or Remote Links."
-play_15 : "**Live Stream Detected**\n\nSystems have detected your track link as live stream. Want to play live stream ?"
-play_16 : "Failed to fetch track details. Try playing any other."
-play_17 : "Unable to play this type of spotify query!\n\nI can only play spotify tracks, albums, artists and playlists"
-play_18 : "**No Active Voice Chat Found**\n\nTo use force play, there must be an active voice chat going on in your group. **Force Play** stops the playing track on voice chat and starts playing the searched track instantly without disturbing/clearing queue."
+play_1 : "🔄 يتم التقدم... الرجاء الانتظار !"
+play_2 : "**🏷وضع التشغيل في القناة**\n\n🔄 يتم الآن ... الرجاء الانتظار !\n**قناة مرتبطة:** {0}"
+play_3 : "فشلت في الوصول!"
+play_4 : "🖇 **أرنب انت مو أدمن **\nبس الادمنية والحسابات الموثوقه يكدرون يشغلون الاغاني هنا  .\n\nتكدر تخلي الكل يشغل من خلال  /playmode واذا جنت انت اصلا ادمن ارجع دز  /admincache"
+play_5 : "فشلت في الوصول للاغنية .\n\nلتفحطني لازم حجم الاغنية اقل من  100 mb"
+play_6 : "**تم تجاوز حد المدة**\n\n**المدة المسموح بها: **{0} minute(s)\n**المدة المستلمة:** {1} hour(s)"
+play_7 : " عذرا لقد وصلت للحد الاقصى في التشغيل . الكثير من المكالمات مفعلة الان. جرب تشغيل الصوتيات أو عد لاحقاً 🥲"
+play_8 : "الفديو غير مدعوم !\n\n**غير مدعوم :** {0}"
+play_9 : "بوية فحطتني سيد هواي تنزل .. الحد الاقصى للفيديو هو 1 GiB"
+play_10 : "**ميزة قائمة تشغيل يوتيوب**\n\nحدد الوضع الذي تريد تشغيل قائمة تشغيل Youtube بالكامل فيه"
+play_11 : "📎العنوان: **{0}\n\n⏳المدة:** {1} Mins"
+play_12 : "**وضع Spotify Play ** \n\n تم طلبه بواسطة:- {0}"
+play_13 : "**قوائم تشغيل Apple ** \n\n تم طلبه بواسطة:- {0}"
+play_14 : "**تعذر التحقق من عنوان URL. ** \n لا تتساءل عما إذا كان عنوان url هذا ينتمي إلى أي من الأنظمة الأساسية التالية: Youtube و AppleMusic و Spotify و Resso و Soundcloud. \ n \ n يمكنك استخدام /stream لـ M3u8 أو الروابط البعيدة."
+play_15 : "**تم اكتشاف البث المباشر ** \n\n اكتشفت الأنظمة ارتباط المسار الخاص بك على أنه بث مباشر. تريد أن تلعب البث المباشر ?"
+play_16 : "فشلت بإحضار معلومات الفيديو. جرب تشغيل أي اغنية اخرى."
+play_17 : "غير قادر على تشغيل هذا النوع من استعلام سبوتيفي!\n\nيمكنني فقط تشغيل مسارات Spotify والألبومات والفنانين وقوائم التشغيل "
+play_18 : "**لا توجد مكالمه في المجموعة**\n\nلاستخدام اللعب بالقوة ، يجب أن تكون هناك محادثة صوتية نشطة جارية في مجموعتك. ** Force Play ** يوقف مسار التشغيل في الدردشة الصوتية ويبدأ تشغيل المسار الذي تم البحث عنه على الفور دون إزعاج/clearing طابور."
 
 
 #Playlist
-playlist_1 : "**Usage:** /play [Music Name or Youtube Link or Reply to Audio]\n\nIf you want to play Bot's Server Playlist! Press the button below."
-playlist_2 : "Getting your playlist. Please wait"
-playlist_3 : "You have no playlist on Bot's Server."
-playlist_4 : "Fetched Playlist:\n\n"
-playlist_5 :  "    Duration- {0} Mins"
-playlist_6 : "Contact me in PM for deletion of Playlists."
-playlist_7 : "Tracks Inside Playlist: {0}\n\nPress the Buttons to delete a particular track in your playlist.\n\nTo delete whole playlist: Press Del Whole Playlist button."
-playlist_8 : "Already Exists\n\nThis track exists in your playlist."
-playlist_9 : "Sorry! You can only have {0} music in a playlist."
-playlist_10 : "Playlist Addition\n\n{0}\nadded to your playlist."
-playlist_11 : "Successfully deleted your track."
-playlist_12 : "Failed to delete your track."
-playlist_13 : "Deleted your whole playlists from the server. "
-playlist_14 : "**Are you Sure you want to delete your whole playlist?**\n\nYou'll lost your playlist and this can't be recovered later."
-playlist_15 : "[Checkout Whole Playlist]({0})"
-playlist_16 : "Queued Playlist:"
-playlist_17 : "Queued Position-"
-playlist_18 : "[Checkout Whole Queued Playlist]({0})\n\nLast Queued Position : **{1}**"
+playlist_1 : "**الاستخدام:** /play [اسم الموسيقى أو رابط يوتيوب أو الرد على الصوت]\n\nإذا كنت تريد تشغيل قائمة تشغيل سيرفر Bot! اضغط على الزر أدناه."
+playlist_2 : "الحصول على قائمة التشغيل الخاصة بك. أرجو الإنتظار"
+playlist_3 : "ليس لديك قائمة تشغيل على خادم البوت."
+playlist_4 : "قائمة التشغيل التي تم جلبها: \n\n"
+playlist_5 :  "المدة- {0} دقيقة"
+playlist_6 : "اتصل بي في المساء لحذف قوائم التشغيل."
+playlist_7 : "المسارات داخل قائمة التشغيل: {0}\n\nاضغط على الأزرار لحذف مسار معين في قائمة التشغيل الخاصة بك.\n\nلحذف قائمة التشغيل بأكملها: اضغط على زر Del Whole Playlist."
+playlist_8 : "موجود بالفعل \n\n هذا المسار موجود في قائمة التشغيل الخاصة بك."
+playlist_9 : "آسف! يمكن أن يكون لديك {0} موسيقى فقط في قائمة التشغيل."
+playlist_10 : "إضافة قائمة التشغيل\n\n {0} \ n مضافة إلى قائمة التشغيل الخاصة بك."
+playlist_11 : "تم حذف مسارك بنجاح."
+playlist_12 : "فشل حذف المسار الخاص بك."
+playlist_13 : "حذف كل قوائم التشغيل الخاصة بك من الخادم. "
+playlist_14 : "**هل تريد بالتأكيد حذف قائمة التشغيل بأكملها؟ **\n\nستفقد قائمة التشغيل الخاصة بك ولا يمكن استردادها لاحقًا."
+playlist_15 : "[الخروج من قائمة التشغيل بأكملها]({0})"
+playlist_16 : "قائمة التشغيل في قائمة الانتظار:"
+playlist_17 : "موقف في قائمة الانتظار-"
+playlist_18 : "[الخروج من قائمة التشغيل بأكملها في قائمة الانتظار] ({0}) \ n \ n آخر موضع في قائمة الانتظار : **{1}**"
 
 #Playmode
-playmode_1 : "Select the mode in which you want to play the queries inside your group[{0}]."
-playmode_2 : "Settings changed and saved successfully by {0}"
+playmode_1 : "حدد الوضع الذي تريد تشغيل الاستعلامات فيه داخل مجموعتك [{0}]."
+playmode_2 : "تم تغيير الإعدادات وحفظها بنجاح بواسطة {0}"
 
 #Stream 
-str_1 : "Please Provide M3u8 Links or Index Links."
-str_2 : "✅ Valid Stream Verified\n\nPlease wait processing link.."
-str_3 : "Unable to stream youtube live streams. No Live Format Found"
+str_1 : "يرجى توفير روابط M3u8 أو روابط الفهرس"
+str_2 : "✅تم التحقق من دفق صالح \n\n الرجاء انتظار ارتباط المعالجة.."
+str_3 : "غير قادر على دفق يوتيوب البث المباشر. لم يتم العثور على تنسيق مباشر"
+
 
 #TopPlay
 tracks_1 : "**Processing {0} Top 10 Playlist**\nThis could take some mins(around 3-4 mins).. Please Wait...\n\n**👤Requested By:** {1}\n\nCheck Top 10 tracks by /gstats"
