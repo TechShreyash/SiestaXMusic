@@ -4,15 +4,9 @@ from YukkiMusic.core.userbot import assistants
 from YukkiMusic.utils.database import get_client
 from YukkiMusic import userbot
 
-ASS1 = Client
-ASS2 = Client
-ASS3 = Client
+ASS1 = userbot.one
 
-if 1 in assistants:
-    ASS1 = userbot.one
-
-if 2 in assistants:
-    ASS2 = userbot.two
+ASS2 = userbot.two
 
 filtero = filters.private & filters.incoming & ~filters.service & ~filters.edited & ~filters.me & ~filters.bot & ~filters.via_bot
 
