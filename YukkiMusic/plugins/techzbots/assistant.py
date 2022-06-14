@@ -2,6 +2,7 @@ from pyrogram import Client, filters
 from YukkiMusic.misc import SUDO_USERS as SUDOERS
 from YukkiMusic.core.userbot import assistants
 from YukkiMusic.utils.database import get_client
+from YukkiMusic import userbot
 
 ASS1 = Client
 ASS2 = Client
