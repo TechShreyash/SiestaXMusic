@@ -15,7 +15,7 @@ if 2 in assistants:
 
 filtero = filters.private & filters.incoming & ~filters.service & ~filters.edited & ~filters.me & ~filters.bot & ~filters.via_bot
 
-@ASS1.on_message(filtero)
+@ASS1.on_message(filters.private)
 async def assistant_(client, message):
     await client.send_message(chat_id=message.from_user.id,text="test")
 
