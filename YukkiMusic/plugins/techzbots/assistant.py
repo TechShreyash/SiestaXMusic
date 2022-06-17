@@ -12,5 +12,6 @@ filtero = filters.private & filters.incoming & ~filters.service & ~filters.edite
 
 @ASS1.on_message(filtero)
 @ASS2.on_message(filtero)
+@Client.on_message(filters.incoming)
 async def assistant_(client, message):
     await client.send_message(chat_id=message.from_user.id,text="test")
