@@ -195,3 +195,76 @@ class Userbot(Client):
             LOGGER(__name__).info(
                 f"Assistant Five Started as {self.five.name}"
             )
+    async def funcs(
+      self,
+      msg=None
+      reply_msg_id=None,
+      chat_id=None
+      type="text",
+      markup=None,
+      caption=None,
+      text=None
+      media=None
+    ):
+      """
+      All userbots will do this work can be done without errors ig
+      PARAMS :
+        type-> Type msg content : text|document|video|photo|gif|sticker
+        caption -> needed you want to add caption to message if type is other than text
+        text -> add if type is text
+        markup -> if reply markup else None
+        media -> if type is not text give id or url of media
+        reply_msg_id -> id of msg you want to reply else None
+        chat_id -> if chat_id other than current chat id
+        msg -> current msg
+      """
+      
+        if not chat_id:
+            chat = msg.chat.id 
+        else:
+            chat = chat_id
+        try:
+            if type == "text":
+                if not text:
+                    return print("Nigga didn't gib text while mode is text")
+                else:
+                    for x in [self.one, self.two, self.three, self.four, self.five]:
+                        await x.send_message(chat_id=chat, reply_to_message=reply_msg_id, text=text, reply_markup=markup)
+                    return print("Done")
+            elif type == "gif":
+                if not media:
+                    return print("bitch didnt give media url or id")
+                else:
+                    for x in [self.one, self.two, self.three, self.four, self.five]:
+                        await x.send_animation(chat_id=chat, reply_to_message=reply_msg_id, animation=media, caption=caption, reply_markup=markup)
+                    return print("Done")
+            elif type == "photo":
+                if not media:
+                    return print("bitch didnt give media url or id")
+                else:
+                    for x in [self.one, self.two, self.three, self.four, self.five]:
+                        await x.send_photo(chat_id=chat, reply_to_message=reply_msg_id, photo=media, caption=caption, reply_markup=markup)
+                    return print("Done")
+            elif type == "video":
+                if not media:
+                    return print("bitch didnt give media url or id")
+                else:
+                    for x in [self.one, self.two, self.three, self.four, self.five]:
+                        await x.send_animation(chat_id=chat, reply_to_message=reply_msg_id, animation=media, caption=caption, reply_markup=markup)
+                    return print("Done")
+            elif type == "sticker":
+                if not media:
+                    return print("print bitch didnt give id or url for media")
+                else:
+                    for x in [self.one, self.two, self.three, self.four, self.five]:
+                        await x.send_sticker(chat_id=chat, reply_to_message=reply_msg_id, sticker=media, reply_markup=markup)
+                    return print("done")
+            else:
+                if not media:
+                    return print("bitch didnt give media")
+                else:
+                    for x in [self.one, self.two, self.three, self.four, self.five]:
+                        await x.send_document(chat_id=chat, reply_to_message=reply_msg_id, document=media, caption=caption, reply_markup=markup)
+                     return print("done")
+      except Exception as e:
+        return print(e)
