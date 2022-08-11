@@ -29,10 +29,10 @@ START_BUTTON_GROUP = InlineKeyboardMarkup(
         ],
         [
             InlineKeyboardButton(
-                text="📣 Updates Channel", url="https://t.me/TechZBots"
+                text="📣 Updates Channel", url="https://t.me/ruangkatastory"
             ),
             InlineKeyboardButton(
-                text="💬 Support Group", url="https://t.me/TechZBots_Support"
+                text="💬 Support Group", url="https://t.me/cari_temen_pacar_online"
             ),                       
         ],        
     ]
@@ -51,10 +51,16 @@ START_BUTTON_PRIVATE = InlineKeyboardMarkup(
         ],
         [
             InlineKeyboardButton(
-                text="📣 Updates Channel", url="https://t.me/TechZBots"
+                text="📣 Updates Channel", url="https://t.me/ruangkatastory"
             ),
             InlineKeyboardButton(
-                text="💬 Support Group", url="https://t.me/TechZBots_Support"
+                text="💬 Support Group", url="https://t.me/cari_temen_pacar_online"
+            ),
+        ],
+        [
+            InlineKeyboardButton
+               texs=👤 Owner", url="https://t.me/skoyii
+
             ),                       
         ],        
     ]
