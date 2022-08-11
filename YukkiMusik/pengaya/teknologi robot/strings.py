@@ -1,4 +1,4 @@
-from YukkiMusic import app
+YukkiMusik/plugin/robot teknologi/strings.pyfrom YukkiMusic import app
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 from config import MUSIC_BOT_NAME as BOT_NAME
 
@@ -59,7 +59,7 @@ START_BUTTON_PRIVATE = InlineKeyboardMarkup(
         ],
         [
             InlineKeyboardButton
-               texs=👤 Owner", url="https://t.me/skoyii
+               texs=👤 Owner", url= f"https://t.me/skoyii
 
             ),                       
         ],        
