@@ -61,6 +61,12 @@ For more information on the technologies that power the SiestaXMusic, check out 
 <h4>Click the button below to deploy SiestaXMusic on Heroku!</h4>    
 <a href="https://dashboard.heroku.com/new?template=https://github.com/TechShreyash/SiestaXMusic"><img src="https://img.shields.io/badge/Deploy%20To%20Heroku-blueviolet?style=for-the-badge&logo=heroku" width="200"/></a>
 
+
+## 🖇 okteto Deployment
+
+<h4>Click the button below to deploy Yukki on Okteto!</h4>
+<a href="https://cloud.okteto.com/deploy?repository= https://github.com/TechShreyash/SiestaXMusic"><img src="https://img.shields.io/badge/Deploy%20To%20Okteto-informational?style=for-the-badge&logo=Okteto" width="200""/></a>
+
 > How to Deploy To Heroku? [Watch Tutorial](https://www.youtube.com/embed/NPTk-awGalY)
 
 > Click on buttons below to expand and  detailed explanation process. !
