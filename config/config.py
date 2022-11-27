@@ -168,27 +168,27 @@ PING_IMG_URL = getenv(
 
 PLAYLIST_IMG_URL = getenv(
     "PLAYLIST_IMG_URL",
-    "assets/Playlist.jpeg",
+    "https://te.legra.ph/file/30452636a29f575c0a0c0.jpg",
 )
 
 GLOBAL_IMG_URL = getenv(
     "GLOBAL_IMG_URL",
-    "assets/Global.jpeg",
+    "https://te.legra.ph/file/88e0c7be525de0d93854e.jpg",
 )
 
 STATS_IMG_URL = getenv(
     "STATS_IMG_URL",
-    "assets/Stats.jpeg",
+    "https://te.legra.ph/file/88e0c7be525de0d93854e.jpg",
 )
 
 TELEGRAM_AUDIO_URL = getenv(
     "TELEGRAM_AUDIO_URL",
-    "assets/Audio.jpeg",
+    "https://te.legra.ph/file/d4e79e1719a07e53da4fe.jpg",
 )
 
 TELEGRAM_VIDEO_URL = getenv(
     "TELEGRAM_VIDEO_URL",
-    "assets/Video.jpeg",
+    "https://te.legra.ph/file/5f9ae00cde0806a969197.jpg",
 )
 
 STREAM_IMG_URL = getenv(
@@ -203,7 +203,7 @@ SOUNCLOUD_IMG_URL = getenv(
 
 YOUTUBE_IMG_URL = getenv(
     "YOUTUBE_IMG_URL",
-    "assets/Youtube.jpeg",
+    "https://te.legra.ph/file/5f9ae00cde0806a969197.jpg",
 )
 
 SPOTIFY_ARTIST_IMG_URL = getenv(
