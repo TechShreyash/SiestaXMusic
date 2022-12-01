@@ -163,7 +163,7 @@ START_IMG_URL = getenv("START_IMG_URL", "https://te.legra.ph/file/8eb3466b2e2fc3
 
 PING_IMG_URL = getenv(
     "PING_IMG_URL",
-    "assets/Ping.jpeg",
+    "https://te.legra.ph/file/1296994c1a55dde6323b2.jpg",
 )
 
 PLAYLIST_IMG_URL = getenv(
@@ -193,7 +193,7 @@ TELEGRAM_VIDEO_URL = getenv(
 
 STREAM_IMG_URL = getenv(
     "STREAM_IMG_URL",
-    "assets/Stream.jpeg",
+    "https://te.legra.ph/file/5f9ae00cde0806a969197.jpg",
 )
 
 SOUNCLOUD_IMG_URL = getenv(
